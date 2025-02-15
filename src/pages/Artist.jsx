@@ -4,14 +4,21 @@ import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import { Link, useParams } from 'react-router-dom';
 import SongList from '../components/SongList';
 import { artistArray } from '../assets/database/artists';
+import { songsArray } from '../assets/database/songs';
 
 
-const Artist = ({banner}) => {
+const Artist = () => {
   const { id } = useParams();
   const artistObj = 
     artistArray.filter((currentArtistObj)=>currentArtistObj.id === Number(id))[0];
 
+  const songsArrayFromArtist = 
+    songsArray.filter((currentSongObj)=>currentSongObj.artist === artistObj.name);
 
+
+
+  const randomIndex = Math.floor(Math.random() * (songsArrayFromArtist.length - 1));
+  const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
 
   return (
     <div className='artist' >
@@ -21,17 +28,17 @@ const Artist = ({banner}) => {
        }}
       >
 
-        <h2 className='artist__title'>{artistObj.name}</h2>
+        <h2 className='artist__title'></h2>
 
       </div>
 
       <div className="artist__body">
 
         <h2>Populares</h2>
-        <SongList artistName = {artistObj.name} />
+        <SongList songsArray = {songsArrayFromArtist} />
       </div>
 
-      <Link to = "/song/">
+      <Link to = {`/song/${randomIdFromArtist}`}>
         <FontAwesomeIcon className="single-item__icon single-item__icon--artist "icon={faCirclePlay}/>
       </Link>
 
