@@ -2,26 +2,29 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import SingleItem from './SingleItem';
-import { artistArray } from '../assets/database/artists';
 
 
-const ItemList = ({title, items}) => {
+
+const ItemList = ({title, items, itemsArray, path, idPath}) => {
   console.log(title)
   return (
           <div className="item-list">
             <div className="item-list__header">
               <h2>{title} populares</h2>
-              <a className="item-list__link" href="/">
+              <a href={path} className="item-list__link" >
                 Mostrar tudo
               </a>
             </div>
     
             <div className="item-list__container">
               {
-                artistArray
+                itemsArray
                 .filter((currentValue, index) => index < items)
-                  .map((currobj, index) => 
-                    (<SingleItem key={`${title}-${index}`}/>))
+                  .map((currObj, index) => 
+                    (<SingleItem 
+                      idPath = {idPath}
+                      {...currObj} 
+                        key={`${title}-${index}`}/>))
               }
               
             </div>
