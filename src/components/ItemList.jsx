@@ -3,22 +3,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import SingleItem from './SingleItem';
 
-const ItemList = () => {
+const ItemList = ({title, items}) => {
+  console.log(title)
   return (
           <div className="item-list">
             <div className="item-list__header">
-              <h2>Artistas populares</h2>
+              <h2>{title} populares</h2>
               <a className="item-list__link" href="/">
                 Mostrar tudo
               </a>
             </div>
     
             <div className="item-list__container">
-              <SingleItem/>
-              <SingleItem/>
-              <SingleItem/>
-              <SingleItem/>
-              <SingleItem/>
+              {
+                Array(items).fill().map((currentValue, index) => 
+                  (<SingleItem key={`${title}-${index}`}/>))
+              }
               
             </div>
           </div>
