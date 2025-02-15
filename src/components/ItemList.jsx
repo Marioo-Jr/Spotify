@@ -2,6 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
 import SingleItem from './SingleItem';
+import { artistArray } from '../assets/database/artists';
+
 
 const ItemList = ({title, items}) => {
   console.log(title)
@@ -16,8 +18,10 @@ const ItemList = ({title, items}) => {
     
             <div className="item-list__container">
               {
-                Array(items).fill().map((currentValue, index) => 
-                  (<SingleItem key={`${title}-${index}`}/>))
+                artistArray
+                .filter((currentValue, index) => index < items)
+                  .map((currobj, index) => 
+                    (<SingleItem key={`${title}-${index}`}/>))
               }
               
             </div>
