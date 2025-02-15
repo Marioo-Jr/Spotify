@@ -1,26 +1,34 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import SongList from '../components/SongList';
+import { artistArray } from '../assets/database/artists';
 
-const Artist = () => {
+
+const Artist = ({banner}) => {
+  const { id } = useParams();
+  const artistObj = 
+    artistArray.filter((currentArtistObj)=>currentArtistObj.id === Number(id))[0];
+
+
+
   return (
     <div className='artist' >
-
-      <div className="artist__header" style={{backgroundImage:
-        "linear-gradient(to bottom, var(--_shade), var(--_shade)), url(https://www.hashtagtreinamentos.com/wp-content/uploads/2025/02/mc-tuto.png)"
+      <div className="artist__header" style={{
+        backgroundImage:
+        `linear-gradient(to bottom, var(--_shade), var(--_shade)), url(${artistObj.banner})`,
        }}
       >
 
-        <h2 className='artist__title'>Jorge & mateus </h2>
+        <h2 className='artist__title'>{artistObj.name}</h2>
 
       </div>
 
       <div className="artist__body">
 
         <h2>Populares</h2>
-        <SongList/>
+        <SongList artistName = {artistObj.name} />
       </div>
 
       <Link to = "/song/">
