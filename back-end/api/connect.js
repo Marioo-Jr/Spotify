@@ -11,8 +11,12 @@ const URI =
 
 const client = new MongoClient(URI);
 
-const db = client.db("SpotifyAula");
-const songCollection = await db.collection("songs").find({}).toArray();
+
+// a baixo o comando para criar o BD
+export const db = client.db("SpotifyAula");
+
+// COMANDO A BAIXO SERVE APENAS PARA PEGAR INFORMACOES
+//const songCollection = await db.collection("songs").find({}).toArray();
 
 
-console.log(songCollection)
+//console.log(songCollection)
