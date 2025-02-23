@@ -33,6 +33,10 @@ Este projeto é uma aplicação web inspirada na interface e funcionalidades bá
 
 # Visualização de Artistas:
 ####
+
+![image](https://github.com/user-attachments/assets/74b4fed6-f4f1-4ea2-97bb-32e50f3200b6)
+
+
 Na página principal, o usuário pode ver uma lista de artistas populares. É possível clicar em um artista específico para ver mais detalhes sobre ele, como foto de perfil, banner e músicas associadas
 
 
