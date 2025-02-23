@@ -52,4 +52,8 @@ Também há uma lista de músicas, com informações de título, duração e ima
 
 # Integração com Banco de Dados (MongoDB):
 ####
+
+![image](https://github.com/user-attachments/assets/27941e12-160e-462d-9fdd-5fc9c3334f3d)
+
+
 Os dados de artistas e músicas são carregados e armazenados em um banco de dados MongoDB. O back-end disponibiliza rotas para buscar essas informações e exibi-las no front-end.
