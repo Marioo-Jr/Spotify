@@ -34,28 +34,34 @@ Este projeto é uma aplicação web inspirada na interface e funcionalidades bá
 # Visualização de Artistas:
 ####
 
+
+Na página principal, o usuário pode ver uma lista de artistas populares.
+
+####
 ![image](https://github.com/user-attachments/assets/3d224492-7c21-4012-82e1-8de18a9e1c5a)
 
 
 
-
-Na página principal, o usuário pode ver uma lista de artistas populares.
+É possível clicar em um artista específico para ver mais detalhes sobre ele, como foto de perfil, banner e músicas associadas
+####
 
 ![image](https://github.com/user-attachments/assets/2038bd2e-963f-410b-8cca-96a165f8bc8c)
 
 
-É possível clicar em um artista específico para ver mais detalhes sobre ele, como foto de perfil, banner e músicas associadas
 
 
 # Visualização de Músicas:
+####
+Também há uma lista de músicas, com informações de título, duração e imagem de capa. O usuário pode clicar em cada música para ir à página de detalhes.
 ####
 
 ![image](https://github.com/user-attachments/assets/ce5b97a3-313b-45bf-9200-7bfc8cd78a95)
 
 
-Também há uma lista de músicas, com informações de título, duração e imagem de capa. O usuário pode clicar em cada música para ir à página de detalhes.
 
 # Integração com Banco de Dados (MongoDB):
+####
+Os dados de artistas e músicas são carregados e armazenados em um banco de dados MongoDB. O back-end disponibiliza rotas para buscar essas informações e exibi-las no front-end.
 ####
 
 ![image](https://github.com/user-attachments/assets/27941e12-160e-462d-9fdd-5fc9c3334f3d)
